@@ -185,7 +185,7 @@ export default function Home() {
                     )}
                   </div>
                   <div className="mb-6">
-                    <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a84c]">{t.tier} · {t.tag}</span>
+                    <span className="text-xs tracking-[0.2em] uppercase text-[#c9a84c]/80">{t.tier} · {t.tag}</span>
                     <h3 className="font-[family-name:var(--font-playfair)] text-3xl text-[#f5f0e8] mt-1">{t.name}</h3>
                     <div className="flex items-end gap-1 mt-3">
                       <span className="text-4xl font-light text-[#f5f0e8]">{t.price}</span>
@@ -252,9 +252,9 @@ export default function Home() {
         >
           <div className="max-w-6xl mx-auto px-8 py-6 flex items-center justify-between">
             <div>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#c9a84c] mb-1">Part of the Mantra Family</p>
-              <p className="text-sm text-[#f5f0e8]/60 group-hover:text-[#f5f0e8] transition-colors">
-                Visit Mantra Tattoo — our brick-and-mortar studio in Arizona →
+              <p className="text-xs tracking-[0.25em] uppercase text-[#c9a84c] mb-1">Part of the Mantra Family</p>
+              <p className="text-base text-[#f5f0e8]/60 group-hover:text-[#f5f0e8] transition-colors">
+                Mantra Tattoo — Lakewood, Colorado. In business for 20+ years →
               </p>
             </div>
             <span className="hidden sm:block text-[#c9a84c]/40 group-hover:text-[#c9a84c] text-2xl transition-colors">↗</span>
