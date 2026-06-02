@@ -63,13 +63,27 @@ body {
   z-index: 2;
 }
 
-/* Button sweep shimmer on hover */
-.btn-shimmer {
+/* Shared pseudo-element styles for both button shimmer variants */
+@keyframes btn-sweep {
+  0%   { left: -120%; }
+  100% { left: 160%; }
+}
+
+/* Sweep that runs once and pauses before looping */
+@keyframes btn-sweep-loop {
+  0%   { left: -120%; }
+  30%  { left: 160%; }
+  100% { left: 160%; }
+}
+
+.btn-shimmer,
+.btn-shimmer-loop {
   position: relative;
   overflow: hidden;
 }
 
-.btn-shimmer::after {
+.btn-shimmer::after,
+.btn-shimmer-loop::after {
   content: "";
   position: absolute;
   top: 0;
@@ -78,23 +92,24 @@ body {
   height: 100%;
   background: linear-gradient(
     90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.08) 20%,
-    rgba(255, 255, 255, 0.28) 50%,
-    rgba(255, 255, 255, 0.08) 80%,
-    transparent 100%
+    transparent            0%,
+    rgba(255,255,255,0.08) 20%,
+    rgba(255,255,255,0.28) 50%,
+    rgba(255,255,255,0.08) 80%,
+    transparent            100%
   );
   transform: skewX(-15deg);
-  transition: none;
+  pointer-events: none;
 }
 
+/* Hover-only (one-shot) */
 .btn-shimmer:hover::after {
   animation: btn-sweep 3.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-@keyframes btn-sweep {
-  0%   { left: -120%; }
-  100% { left: 160%; }
+/* Always looping — 30% sweep, 70% pause per 5s cycle */
+.btn-shimmer-loop::after {
+  animation: btn-sweep-loop 5s ease-in-out infinite;
 }
 
 /* Skeleton shimmer for loading states */

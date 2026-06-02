@@ -110,7 +110,7 @@ export default function Home() {
         </div>
         <a
           href="#subscriptions"
-          className="btn-shimmer text-xs tracking-[0.2em] uppercase border border-[#c9a84c] text-[#c9a84c] px-5 py-2 hover:bg-[#c9a84c] hover:text-[#0c0c0c] transition-all"
+          className="btn-shimmer-loop text-xs tracking-[0.2em] uppercase border border-[#c9a84c] text-[#c9a84c] px-5 py-2 hover:bg-[#c9a84c] hover:text-[#0c0c0c] transition-all"
         >
           Subscribe
         </a>
@@ -133,7 +133,7 @@ export default function Home() {
         <div ref={ctaRef} className="opacity-0 mt-12 flex flex-col sm:flex-row items-center gap-4">
           <a
             href="#subscriptions"
-            className="btn-shimmer px-10 py-4 bg-[#c9a84c] text-[#0c0c0c] text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#e0be6a] transition-colors"
+            className="btn-shimmer-loop px-10 py-4 bg-[#c9a84c] text-[#0c0c0c] text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#e0be6a] transition-colors"
           >
             Choose Your Plan
           </a>
@@ -206,7 +206,7 @@ export default function Home() {
                   </ul>
                   <a
                     href="#"
-                    className={`btn-shimmer block text-center text-xs tracking-[0.2em] uppercase py-4 font-semibold transition-all ${
+                    className={`${i === 1 ? "btn-shimmer-loop" : "btn-shimmer"} block text-center text-xs tracking-[0.2em] uppercase py-4 font-semibold transition-all ${
                       t.highlight
                         ? "bg-[#c9a84c] text-[#0c0c0c] hover:bg-[#e0be6a]"
                         : "border border-[#c9a84c]/50 text-[#c9a84c] hover:bg-[#c9a84c] hover:text-[#0c0c0c]"
