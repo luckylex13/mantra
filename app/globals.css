@@ -47,10 +47,6 @@ body {
 
 .advanced-glow {
   position: relative;
-  box-shadow:
-    0 0 0 1px rgba(201, 168, 76, 0.4),
-    0 0 32px rgba(201, 168, 76, 0.15),
-    0 0 64px rgba(201, 168, 76, 0.05);
 }
 
 .advanced-glow::before {
