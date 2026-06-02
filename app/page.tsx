@@ -170,9 +170,12 @@ export default function Home() {
               <div
                 className={[
                   "relative flex flex-col h-full p-8",
-                  t.highlight
-                    ? "advanced-glow bg-[#161616] border border-[#c9a84c]/40"
-                    : "bg-[#111] border border-[#f5f0e8]/5",
+                  i === 1 ? "advanced-glow" : "",
+                  [
+                    "bg-[#1b1811] border border-[#c9a84c]/20",  // Basic  — dark gold
+                    "bg-[#28220e] border border-[#c9a84c]/50",  // Advanced — medium gold
+                    "bg-[#3e3519] border border-[#c9a84c]/35",  // VIP — bright gold
+                  ][i],
                 ].join(" ")}
               >
                 <div className="relative z-10 flex flex-col h-full">
