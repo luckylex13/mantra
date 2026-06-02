@@ -39,27 +39,57 @@ body {
   animation: shimmer 4s linear infinite;
 }
 
-/* Advanced card — pseudo-element glow, opacity-animated for reliability */
-@keyframes advanced-glow {
-  0%, 100% { opacity: 0; }
+/* Advanced card — full-card shimmer sweep + breathing border glow */
+@keyframes advanced-border-glow {
+  0%, 100% { opacity: 0.2; }
   50%       { opacity: 1; }
+}
+
+@keyframes advanced-interior-sweep {
+  0%   { left: -100%; }
+  100% { left: 150%; }
 }
 
 .advanced-glow {
   position: relative;
+  overflow: hidden;
+  /* outer glow lives on the element so overflow:hidden doesn't clip it */
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.4),
+    0 0 32px rgba(201, 168, 76, 0.15),
+    0 0 64px rgba(201, 168, 76, 0.05);
 }
 
+/* Border ring — breathes in and out */
 .advanced-glow::before {
   content: "";
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(201, 168, 76, 0.65);
-  box-shadow:
-    0 0 18px rgba(201, 168, 76, 0.22),
-    0 0 48px rgba(201, 168, 76, 0.07);
-  animation: advanced-glow 4s ease-in-out infinite;
+  border: 1px solid rgba(201, 168, 76, 0.7);
+  animation: advanced-border-glow 4s ease-in-out infinite;
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
+}
+
+/* Interior light sweep — slow diagonal beam across the whole card */
+.advanced-glow::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -100%;
+  width: 80%;
+  height: 120%;
+  background: linear-gradient(
+    105deg,
+    transparent            0%,
+    rgba(201, 168, 76, 0.04) 20%,
+    rgba(245, 225, 122, 0.10) 50%,
+    rgba(201, 168, 76, 0.04) 80%,
+    transparent            100%
+  );
+  animation: advanced-interior-sweep 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Button sweep shimmer on hover */
