@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useRef } from "react"
+import Image from "next/image"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import ScrollReveal from "./components/ScrollReveal"
@@ -86,9 +87,13 @@ export default function Home() {
 
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 bg-[#0c0c0c]/90 backdrop-blur-sm border-b border-[#c9a84c]/10">
-        <span className="font-[family-name:var(--font-playfair)] text-xl tracking-widest text-[#c9a84c] uppercase">
-          Mantra
-        </span>
+        <Image
+          src="/images/mantra-logo.svg"
+          alt="Mantra Body Jewelry"
+          width={120}
+          height={25}
+          priority
+        />
         <div className="hidden sm:flex items-center gap-8 text-xs tracking-[0.2em] uppercase text-[#f5f0e8]/60">
           <a href="#subscriptions" className="hover:text-[#c9a84c] transition-colors">Subscriptions</a>
           <a href="#how-it-works" className="hover:text-[#c9a84c] transition-colors">How It Works</a>
@@ -342,9 +347,12 @@ export default function Home() {
       <footer className="border-t border-[#f5f0e8]/5 px-8 py-8">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <span className="font-[family-name:var(--font-playfair)] text-lg tracking-widest text-[#c9a84c] uppercase">
-              Mantra
-            </span>
+            <Image
+              src="/images/mantra-logo.svg"
+              alt="Mantra Body Jewelry"
+              width={90}
+              height={19}
+            />
             <span className="hidden sm:block text-[#f5f0e8]/10">|</span>
             <a
               href="https://mantratattoo.us/"
