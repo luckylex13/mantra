@@ -90,8 +90,8 @@ export default function Home() {
         <Image
           src="/images/mantra-logo.svg"
           alt="Mantra Body Jewelry"
-          width={120}
-          height={25}
+          width={150}
+          height={31}
           priority
         />
         <div className="hidden sm:flex items-center gap-8 text-xs tracking-[0.2em] uppercase text-[#f5f0e8]/60">
@@ -350,8 +350,8 @@ export default function Home() {
             <Image
               src="/images/mantra-logo.svg"
               alt="Mantra Body Jewelry"
-              width={90}
-              height={19}
+              width={110}
+              height={23}
             />
             <span className="hidden sm:block text-[#f5f0e8]/10">|</span>
             <a
