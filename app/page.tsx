@@ -110,7 +110,7 @@ export default function Home() {
         </div>
         <a
           href="#subscriptions"
-          className="btn-shimmer-loop text-xs tracking-[0.2em] uppercase border border-[#c9a84c] text-[#c9a84c] px-5 py-2 hover:bg-[#c9a84c] hover:text-[#0c0c0c] transition-all"
+          className="btn-shimmer text-xs tracking-[0.2em] uppercase border border-[#c9a84c] text-[#c9a84c] px-5 py-2 hover:bg-[#c9a84c] hover:text-[#0c0c0c] transition-all"
         >
           Subscribe
         </a>
@@ -338,7 +338,7 @@ export default function Home() {
             />
             <button
               type="submit"
-              className="btn-shimmer px-8 py-3 bg-[#c9a84c] text-[#0c0c0c] text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#e0be6a] transition-colors whitespace-nowrap"
+              className="btn-shimmer-loop px-8 py-3 bg-[#c9a84c] text-[#0c0c0c] text-xs tracking-[0.2em] uppercase font-semibold hover:bg-[#e0be6a] transition-colors whitespace-nowrap"
             >
               Subscribe
             </button>
