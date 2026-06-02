@@ -39,34 +39,41 @@ body {
   animation: shimmer 4s linear infinite;
 }
 
-/* Card border shimmer */
-@keyframes border-shimmer {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Card light sweep — single beam traveling left to right, clipped per card */
+@keyframes card-light-sweep {
+  0%   { left: -100%; }
+  100% { left: 200%; }
 }
 
 .shimmer-border {
   position: relative;
+  overflow: hidden;
 }
 
 .shimmer-border::before {
   content: "";
   position: absolute;
-  inset: -1px;
-  border-radius: inherit;
+  top: -5%;
+  left: -100%;
+  width: 40%;
+  height: 110%;
   background: linear-gradient(
-    135deg,
-    #c9a84c22,
-    #f5e17a66,
-    #c9a84c22,
-    #ffffff11,
-    #c9a84c44
+    90deg,
+    transparent      0%,
+    rgba(201,168,76,0.05) 20%,
+    rgba(245,225,122,0.16) 50%,
+    rgba(201,168,76,0.05) 80%,
+    transparent      100%
   );
-  background-size: 300% 300%;
-  animation: border-shimmer 4s ease infinite;
-  z-index: 0;
+  animation: card-light-sweep 8s linear infinite;
+  pointer-events: none;
+  z-index: 1;
 }
+
+/* Stagger: each card is 1/3 of the cycle behind the previous,
+   so the beam appears to move card-1 → card-2 → card-3 in sequence */
+.shimmer-delay-1::before { animation-delay: calc(-8s / 3); }
+.shimmer-delay-2::before { animation-delay: calc(-8s * 2 / 3); }
 
 /* Button sweep shimmer on hover */
 .btn-shimmer {

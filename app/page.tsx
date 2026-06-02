@@ -162,20 +162,23 @@ export default function Home() {
           {tiers.map((t, i) => (
             <ScrollReveal key={t.name} delay={i * 0.12}>
               <div
-                className={`shimmer-border relative flex flex-col h-full p-8 ${
+                className={[
+                  "shimmer-border relative flex flex-col h-full p-8",
+                  i === 1 ? "shimmer-delay-1" : i === 2 ? "shimmer-delay-2" : "",
                   t.highlight
                     ? "bg-[#161616] border border-[#c9a84c]/40"
-                    : "bg-[#111] border border-[#f5f0e8]/5"
-                }`}
+                    : "bg-[#111] border border-[#f5f0e8]/5",
+                ].join(" ")}
               >
-                {t.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-[#c9a84c] text-[#0c0c0c] text-[10px] tracking-[0.2em] uppercase font-bold px-4 py-1">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
                 <div className="relative z-10 flex flex-col h-full">
+                  {/* Badge inside card so overflow:hidden doesn't clip it */}
+                  <div className="h-6 mb-4 flex items-center justify-center">
+                    {t.highlight && (
+                      <span className="bg-[#c9a84c] text-[#0c0c0c] text-[10px] tracking-[0.2em] uppercase font-bold px-4 py-1">
+                        Most Popular
+                      </span>
+                    )}
+                  </div>
                   <div className="mb-6">
                     <span className="text-[10px] tracking-[0.3em] uppercase text-[#c9a84c]">{t.tier} · {t.tag}</span>
                     <h3 className="font-[family-name:var(--font-playfair)] text-3xl text-[#f5f0e8] mt-1">{t.name}</h3>
