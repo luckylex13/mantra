@@ -367,8 +367,8 @@ export default function Home() {
             © {new Date().getFullYear()} Mantra Body Jewelry. All rights reserved.
           </p>
           <div className="flex gap-6 text-xs tracking-[0.15em] uppercase text-[#f5f0e8]/30">
-            <a href="#" className="hover:text-[#c9a84c] transition-colors">Instagram</a>
-            <a href="#" className="hover:text-[#c9a84c] transition-colors">TikTok</a>
+            <a href="https://www.instagram.com/mantratattoo" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c] transition-colors">Instagram</a>
+            <a href="https://www.facebook.com/mantratattoo13/" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a84c] transition-colors">Facebook</a>
             <a href="#" className="hover:text-[#c9a84c] transition-colors">Pinterest</a>
           </div>
         </div>
