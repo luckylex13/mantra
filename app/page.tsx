@@ -168,10 +168,9 @@ export default function Home() {
             <ScrollReveal key={t.name} delay={i * 0.12}>
               <div
                 className={[
-                  "shimmer-border relative flex flex-col h-full p-8",
-                  i === 1 ? "shimmer-delay-1" : i === 2 ? "shimmer-delay-2" : "",
+                  "relative flex flex-col h-full p-8",
                   t.highlight
-                    ? "bg-[#161616] border border-[#c9a84c]/40"
+                    ? "advanced-glow bg-[#161616] border border-[#c9a84c]/40"
                     : "bg-[#111] border border-[#f5f0e8]/5",
                 ].join(" ")}
               >

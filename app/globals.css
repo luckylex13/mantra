@@ -39,42 +39,23 @@ body {
   animation: shimmer 4s linear infinite;
 }
 
-/* Card light sweep — Basic → Advanced → VIP sequential fill */
-@keyframes card-light-sweep {
-  0%   { left: -100%; }
-  100% { left: 200%; }
+/* Advanced card — slow breathing border glow, Advanced only */
+@keyframes advanced-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(201,168,76,0.25),
+      0 0 12px rgba(201,168,76,0);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(201,168,76,0.6),
+      0 0 28px rgba(201,168,76,0.10);
+  }
 }
 
-.shimmer-border {
-  position: relative;
-  overflow: hidden;
+.advanced-glow {
+  animation: advanced-glow 4s ease-in-out infinite;
 }
-
-.shimmer-border::before {
-  content: "";
-  position: absolute;
-  top: -5%;
-  left: -100%;
-  width: 65%;
-  height: 110%;
-  background: linear-gradient(
-    90deg,
-    transparent            0%,
-    rgba(201,168,76,0.10) 15%,
-    rgba(245,225,122,0.35) 38%,
-    rgba(255,248,200,0.18) 50%,
-    rgba(245,225,122,0.35) 62%,
-    rgba(201,168,76,0.10) 85%,
-    transparent            100%
-  );
-  animation: card-light-sweep 9s linear infinite;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Positive delays: Basic fires first, Advanced waits 3s, VIP waits 6s */
-.shimmer-delay-1::before { animation-delay: 3s; }
-.shimmer-delay-2::before { animation-delay: 6s; }
 
 /* Button sweep shimmer on hover */
 .btn-shimmer {
